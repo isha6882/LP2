@@ -1,0 +1,38 @@
+public class result
+{
+    public Double val {get;set;}
+    public String ans {get;set;}
+
+    public result()
+    {
+    }
+
+    public void find()
+    {
+        if(val>=0 && val<=35)
+        {
+            ans = 'Fail';
+        }
+        else if(val<=60 && val>35)
+        {
+             ans = 'Below Average';
+        }
+        else if(val>60 && val<=75)
+        {
+             ans = 'Average';
+        }
+        else if(val>75 && val<=90)
+        {
+             ans = 'Above Average';
+        }
+        else if(val>90 && val<=100)
+        {
+             ans = 'Excellent';
+        }
+        else
+        {
+             ans = 'Invalid';
+        }
+    }
+
+}

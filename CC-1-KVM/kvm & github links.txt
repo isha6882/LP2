@@ -1,0 +1,3 @@
+https://phoenixnap.com/kb/ubuntu-install-kvm
+
+https://github.com/master30112001/misc-codes/blob/master/TE/LP-II%20Lab/assgn5_chatbot/assgn5_chatbot.py

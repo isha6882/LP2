@@ -1,0 +1,27 @@
+<apex:page controller="Employee1">
+    <apex:form >
+    	<apex:pageBlock title="Employee Management System">
+        	<apex:pageBlockSection columns="1">
+            	<apex:inputField value="{!c.EmpId__c}"/>
+                <apex:inputField value="{!c.Name}"/>
+                <apex:inputField value="{!c.Salary__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!delete1}" value="Delete"/>
+                <apex:commandButton action="{!update1}" value="Update"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!employees}" var="c">
+                <apex:column headerValue="Employee ID">
+                	<apex:outputField value="{!c.EmpId__c}"/>
+                </apex:column>
+                <apex:column headerValue="Employee Name">
+                	<apex:outputField value="{!c.Name}"/>
+                </apex:column>
+                <apex:column headerValue="Salary">
+                	<apex:outputField value="{!c.Salary__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,37 @@
+public class Employee1 {
+    public employee__c c{
+        get; set;
+    }
+    
+    public List<employee__c> employees{
+        get; set;
+    }
+    
+    public Employee1(){
+        c = new employee__c();
+    }
+    
+    public PageReference save(){
+        insert c;
+        employees = [SELECT EmpId__c, Name, Salary__c FROM employee__c];
+        return null;
+    }
+    
+    public PageReference delete1(){
+        delete[SELECT EmpId__c FROM employee__c WHERE EmpId__c=:c.EmpId__c];
+        employees = [SELECT EmpId__c, Name, Salary__c FROM employee__c];
+        return null;
+    }
+    
+    public PageReference update1(){
+        List<employee__c> emps = [SELECT Name, Salary__c FROM employee__c WHERE EmpId__c=:c.EmpId__c limit 1];
+        if(!emps.isEmpty()){
+            employee__c emp = emps[0];
+            emp.Name = c.Name;
+            emp.Salary__c = c.Salary__c;
+            update emp;
+        }
+        employees = [SELECT EmpId__c, Name, Salary__c FROM employee__c];
+        return null;
+    }
+}

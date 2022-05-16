@@ -1,0 +1,19 @@
+public class first
+{   
+    public Double val1 {get;set;}
+    public Double val2 {get;set;}
+    public Double val3 {get;set;}
+    public Double result {get;set;}
+    public String func {get;set;}
+   
+    public first()
+    {
+    }
+   
+    public void find()
+    {
+        result=(val1*val2*val3)/100;
+    }
+
+  
+}

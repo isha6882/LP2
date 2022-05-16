@@ -1,0 +1,39 @@
+<apex:page controller="first">
+
+<apex:form >
+   
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Principal"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:inputText value="{!val1}"/>
+            </apex:pageBlockSectionItem>                          
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Rate"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:inputText value="{!val2}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="No of Years"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:inputText value="{!val3}"/>
+            </apex:pageBlockSectionItem>              
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Result"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:inputText value="{!result}" id="res"/><apex:actionStatus id="sts" startText="Finding..."/>
+            </apex:pageBlockSectionItem>                                      
+        </apex:pageBlockSection>   
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Find" action="{!find}" reRender="res"  status="sts"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+   
+</apex:form>
+
+</apex:page>

@@ -1,0 +1,35 @@
+public with sharing class employee {
+
+	public Contact c { get; set; }
+	public Contact d { get; set; }
+
+	public List<Contact> samepage { get; set; }
+
+	public employee(){
+		c=new Contact();
+		d=new Contact();
+	}
+
+	public PageReference save() {
+		insert c;
+		samepage= [select id,FirstName,LastName,Email,Birthdate from Contact];
+		return null;
+	}
+    
+    public PageReference delete1(){
+        delete[SELECT FirstName FROM Contact where FirstName=:d.FirstName];
+        samepage= [select id,FirstName,LastName,Email,Birthdate from Contact ];
+        return null;
+    }
+    
+    public PageReference update1() {
+        List<Contact> conts=[select id, Email from Contact where FirstName=:d.FirstName limit 1];
+		if (!conts.isEmpty()){
+    		Contact cont=conts[0];
+    		cont.Email='mail@gmail.com';
+    		update cont;
+		}
+        samepage= [select id,FirstName,LastName,Email,Birthdate from Contact ];
+        return null;
+    }
+}
